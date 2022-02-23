@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
@@ -64,11 +64,11 @@ function App() {
         </NavItems>
       </Nabvar>
       <Wrapper>
-        <Switch>
-          <Route exact path="/todos" component={TodoList} />
-          <Route exact path="/todos/new" component={AddTodo} />
-          <Route path="/todos/:id/edit" component={EditTodo} />
-        </Switch>
+        <Routes>
+          <Route exact path="/todos" element={<TodoList />} />
+          <Route exact path="/todos/new" element={<AddTodo />} />
+          <Route path="/todos/:id/edit" element={<EditTodo />} />
+        </Routes>
       </Wrapper>
     </>
   )
